@@ -45,7 +45,7 @@ public class UserItemTest {
 
         String result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(item);
 
-        System.out.println("JUser : givenBidirectionRelation_whenUsingJacksonReferenceAnnotation_thenCorrect");
+        System.out.println("JItem : givenBidirectionRelation_whenUsingJacksonReferenceAnnotation_thenCorrect");
         System.out.println(result);
 
         assertThat(result, containsString("book"));
@@ -64,7 +64,7 @@ public class UserItemTest {
 
         String result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(item);
 
-        System.out.println("J2User : givenBidirectionRelation_whenUsingJsonIdentityInfo_thenCorrect");
+        System.out.println("J2Item : givenBidirectionRelation_whenUsingJsonIdentityInfo_thenCorrect");
         System.out.println(result);
 
         assertThat(result, containsString("book"));
@@ -83,7 +83,7 @@ public class UserItemTest {
 
         String result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(item);
 
-        System.out.println("J3User : givenBidirectionRelation_whenUsingJsonIgnore_thenCorrect");
+        System.out.println("J3Item : givenBidirectionRelation_whenUsingJsonIgnore_thenCorrect");
         System.out.println(result);
 
         assertThat(result, containsString("book"));
@@ -102,7 +102,7 @@ public class UserItemTest {
         String result = new ObjectMapper().writerWithView(Views.Public.class) // Note: with Public View
                 .withDefaultPrettyPrinter().writeValueAsString(item);
 
-        System.out.println("J4User : givenBidirectionRelation_whenUsingPublicJsonView_thenCorrect");
+        System.out.println("J4Item : givenBidirectionRelation_whenUsingPublicJsonView_thenCorrect");
         System.out.println(result);
 
         assertThat(result, containsString("book"));
@@ -135,7 +135,7 @@ public class UserItemTest {
 
         String result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(item);
 
-        System.out.println("J5User : givenBidirectionRelation_whenUsingCustomSerializer_thenCorrect");
+        System.out.println("J5Item : givenBidirectionRelation_whenUsingCustomSerializer_thenCorrect");
         System.out.println(result);
 
         assertThat(result, containsString("book"));
@@ -157,7 +157,7 @@ public class UserItemTest {
         assertEquals("book", item.itemName);
         assertEquals("John", item.owner.name);
 
-        System.out.println("J2User : givenBidirectionRelation_whenDeserializingWithIdentity_thenCorrect");
+        System.out.println("J2Item : givenBidirectionRelation_whenDeserializingWithIdentity_thenCorrect");
         System.out.println(item.toString());
     }
 
@@ -175,7 +175,7 @@ public class UserItemTest {
         assertEquals("book", item.itemName);
         assertEquals("John", item.owner.name);
 
-        System.out.println("J5User : givenBidirectionRelation_whenUsingCustomDeserializer_thenCorrect");
+        System.out.println("J5Item : givenBidirectionRelation_whenUsingCustomDeserializer_thenCorrect");
         System.out.println(item.toString());
     }
 }
